@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course-wise Student Count</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <%- include('../partials/navbar') %>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card shadow">
+            <div class="card-header bg-info text-white text-center">
+              <h4>Course-wise Student Count</h4>
+            </div>
+            <div class="card-body">
+              <table class="table table-bordered table-striped text-center">
+                <thead class="table-light">
+                  <tr>
+                    <th>Course</th>
+                    <th>Student Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% report.forEach(row=> 
+                  { 
+                  %>
+                    <tr>
+                      <td>
+                        <%= row.course_name %>
+                      </td>
+                      <td>
+                        <%= row.student_count %>
+                      </td>
+                    </tr>
+                  <% 
+                  }); %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
